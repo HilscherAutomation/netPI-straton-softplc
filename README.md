@@ -6,7 +6,7 @@ Made for [netPI](https://www.netiot.com/netpi/), the Raspberry Pi 3B Architectur
 
 The image provided hereunder deploys a container with installed Debian and the soft PLC [straton](https://www.straton-plc.com/) for Raspberry PI (unlicensed).
 
-Base of this image builds a tagged version of [debian:jessie](https://hub.docker.com/r/resin/armv7hf-debian/tags/) with unlicensed straton [runtime for Raspberry PI](https://www.straton-plc.com/en/news/success-stories/raspberry/) T5 in the version 9.1 which runs 15 minutes until it turns into a demo mode.
+Base of this image builds [debian](https://www.balena.io/docs/reference/base-images/base-images/) with unlicensed straton [runtime for Raspberry PI](https://www.straton-plc.com/en/news/success-stories/raspberry/) T5 in the version 9.1 which runs 15 minutes until it turns into a demo mode.
 
 To upgrade to a full featured version use the image's building script as a template, add your bought `K5License.ini` (MAC address bound) file from COPA-DATA to the runtime folder `/home/pi`, rebuild it in an own repository and then deploy it on netPI.
 
@@ -50,7 +50,7 @@ Use the straton IDE and create a new project as usual. Select `T5 Runtime` as ru
 
 The project complies with the scripting based [Dockerfile](https://docs.docker.com/engine/reference/builder/) method to build the image output file. Using this method is a precondition for an [automated](https://docs.docker.com/docker-hub/builds/) web based build process on DockerHub platform.
 
-DockerHub web platform is x86 CPU based, but an ARM CPU coded output file is needed for Raspberry systems. This is why the Dockerfile includes the [balena.io](https://balena.io/blog/building-arm-containers-on-any-x86-machine-even-dockerhub/) steps.
+DockerHub web platform is x86 CPU based, but an ARM CPU coded output file is needed for Raspberry systems. This is why the Dockerfile includes the [balena](https://balena.io/blog/building-arm-containers-on-any-x86-machine-even-dockerhub/) steps.
 
 #### License
 
