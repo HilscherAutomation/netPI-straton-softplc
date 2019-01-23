@@ -1,16 +1,16 @@
-#use latest armv7hf compatible raspbian OS version from group resin.io as base image
-FROM balenalib/armv7hf-debian:jessie
+#use armv7hf compatible OS
+FROM balenalib/armv7hf-debian:stretch
 
 #enable building ARM container on x86 machinery on the web (comment out next line if built on Raspberry)
 RUN [ "cross-build-start" ]
 
 #labeling
 LABEL maintainer="netpi@hilscher.com" \
-      version="V0.9.1.0" \
-      description="Raspbian(Debian:jessie) with soft PLC straton from COPA-DATA"
+      version="V0.9.2.0" \
+      description="Raspbian(Debian:stretch) with soft PLC straton from COPA-DATA"
 
 #version
-ENV HILSCHERNETPI_STRATON_SOFTPLC 0.9.1.0
+ENV HILSCHERNETPI_STRATON_SOFTPLC 0.9.2.0
 
 #copy files
 COPY "./init.d/*" /etc/init.d/
